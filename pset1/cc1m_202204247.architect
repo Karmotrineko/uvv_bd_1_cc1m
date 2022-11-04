@@ -180,7 +180,7 @@
   <table id="TAB52" populated="true" UUID="084d0c19-2627-46fa-b466-ee1327405afd" name="paises" objectType="TABLE" physicalName="paises" >
    <remarks>Tabela de países, contém o país e a região onde está localizado o escritório ou outra facilidade da empresa.</remarks>
    <folder id="FOLTAB521" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL53" populated="true" UUID="7267ef68-804b-4f75-b511-f1f320761abb" autoIncrement="false" autoIncrementSequenceName="paises_id_pais_seq" defaultValue="" name="id_pais" nullable="0" physicalName="id_pais" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+    <column id="COL53" populated="true" UUID="7267ef68-804b-4f75-b511-f1f320761abb" autoIncrement="false" autoIncrementSequenceName="paises_id_pais_seq" defaultValue="" name="id_pais" nullable="0" physicalName="id_pais" precision="2" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
      <remarks>Chave primária da tabela que numera os países.</remarks>
     </column>
     <column id="COL54" populated="true" UUID="a92b5284-3712-451e-b107-0850c786056e" autoIncrement="false" autoIncrementSequenceName="paises_nome_seq" defaultValue="" name="nome" nullable="0" physicalName="nome" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -262,7 +262,7 @@
  <ddl-generator type="ca.sqlpower.architect.ddl.GenericDDLGenerator" allow-connection="true"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
- <play-pen zoom="1.0" viewportX="0" viewportY="41" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+ <play-pen zoom="1.0" viewportX="120" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB1" x="825" y="513" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB10" x="429" y="229" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB19" x="409" y="392" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
