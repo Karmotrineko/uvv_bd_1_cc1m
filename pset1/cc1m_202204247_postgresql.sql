@@ -4,11 +4,6 @@
 	 Professor: Abrantes Araújo Silva Filho
 OBS: Utilizei a ferramenta de sql do SQL Power Architect para me ajudar a criar a base do script.*/
 
---Login no postgres
-
-psql -U postgres -d postgres;
---Senha: computacao@raiz
-
 --Criando o usuário rafael_b com privilégio de criar banco de dados
 
 CREATE USER rafael_b with password '123' createdb;
@@ -23,13 +18,9 @@ LC_CTYPE = 'pt_BR.UTF-8'
 allow_connections = true
 template template0;
 
---Saindo do usuário
+--Entrando no usuário
 
-\q
-
---Login no usuário rafael_b
-
-psql -U rafael_b -d uvv;
+\c uvv rafael_b
 --Senha: 123
 
 --Criando o esquema hr com o usuário rafael_b
@@ -55,7 +46,7 @@ COMMENT ON TABLE regioes IS 'Tabela de regiões. Contém o numero determinado e 
 COMMENT ON COLUMN regioes.id_regiao IS 'Chave primária da tabela que numera as regiões.';
 COMMENT ON COLUMN regioes.nome IS 'Contém os nomes das regiões.';
 
---Criando atributo de chave única para a tabela regioes
+--Criando atributo de chave única para a coluna nome na tabela regioes
 
 CREATE UNIQUE INDEX regioes_idx
  ON regioes
@@ -77,7 +68,7 @@ COMMENT ON COLUMN paises.id_pais IS 'Chave primária da tabela que numera os pa�
 COMMENT ON COLUMN paises.nome IS 'Contém o nome dos países.';
 COMMENT ON COLUMN paises.id_regiao IS 'Chave estrangeira referente a tabela de regiões.';
 
---Criando atributo de chave única para a tabela paises
+--Criando atributo de chave única para a coluna nome na tabela paises
 
 CREATE UNIQUE INDEX paises_idx
  ON paises
@@ -123,7 +114,7 @@ COMMENT ON COLUMN cargos.cargo IS 'Contém o nome de cada cargo.';
 COMMENT ON COLUMN cargos.salario_minimo IS 'Contém o menor salário de um cargo determinado.';
 COMMENT ON COLUMN cargos.salario_maximo IS 'Contém o maior salário de um cargo determinado.';
 
---Criando atributo de chave única para a tabela cargos
+--Criando atributo de chave única para a coluna cargo na tabela cargos
 
 CREATE UNIQUE INDEX cargos_idx
  ON cargos
@@ -147,7 +138,7 @@ COMMENT ON COLUMN departamentos.nome IS 'Contém o nome do departamento.';
 COMMENT ON COLUMN departamentos.id_localizacao IS 'Chave estrangeira referindo a tabela de localizações.';
 COMMENT ON COLUMN departamentos.id_gerente IS 'Contém quem é, se houver, o gerente do departamento.';
 
---Criando atributo de chave única para a tabela departamentos
+--Criando atributo de chave única para a coluna nome na tabela departamentos
 
 CREATE UNIQUE INDEX departamentos_idx
  ON departamentos
@@ -183,7 +174,7 @@ COMMENT ON COLUMN empregados.comissao IS 'Contem a porcetagem de comissão de um
 COMMENT ON COLUMN empregados.id_supervisor IS 'Chave de auto-relacionamento com a tabela de empregados, contém o supervisor direto do empregado.';
 COMMENT ON COLUMN empregados.id_departamento IS 'Chave estrangeira referente a tabela de departamentos, contém o departamento atual do empregado.';
 
---Criando atributo de chave única para a tabela departamentos
+--Criando atributo de chave única para a coluna email na tabela departamentos
 
 CREATE UNIQUE INDEX empregados_idx
  ON empregados
@@ -733,10 +724,3 @@ insert into historico_cargos (id_empregado, data_inicial, data_final, id_cargo, 
 (176, '2007-01-01', '2007-12-31', 'SA_MAN', 80);
 insert into historico_cargos (id_empregado, data_inicial, data_final, id_cargo, id_departamento) VALUES
 (200, '2002-07-01', '2006-12-31', 'AC_ACCOUNT', 90);
-
-
-
-
-
-
-
