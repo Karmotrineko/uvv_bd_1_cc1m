@@ -1,13 +1,20 @@
 -- Script de criação e inserção de dados para o MariaDB.
-
 -- Aluno: Rafael Barbosa Crema
-
 -- Professor: Abrantes Araújo Silva Filho
 
+
+-- Criando o banco de dados uvv
+
+CREATE DATABASE uvv;
+
+-- Selecionando o banco de dados
+
+USE uvv;
 
 -- Criando o usuário
 
 CREATE USER 'rafael'@localhost IDENTIFIED BY '123';
+
 
 -- Dando privilégios ao usuário
 
@@ -17,12 +24,6 @@ GRANT ALL PRIVILEGES ON uvv.* TO 'rafael'@localhost;
 
 system mysql -u rafael -p
 -- senha:123
-
--- Criando o banco de dados uvv
-
-CREATE DATABASE uvv;
-
--- Selecionando o banco de dados
 
 USE uvv;
 
